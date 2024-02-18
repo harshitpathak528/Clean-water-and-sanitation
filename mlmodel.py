@@ -24,3 +24,14 @@ predictions = model.predict(X_test)
 # Print the coefficients and intercept of the model
 print("Coefficients:", model.coef_)
 print("Intercept:", model.intercept_)
+#******************************************************************************************************************************
+import gc
+
+# create some objects
+objs = [object() for _ in range(1000)]
+
+# manually trigger garbage collection
+gc.collect()
+
+# check the number of objects that have been collected
+print(gc.collect())
